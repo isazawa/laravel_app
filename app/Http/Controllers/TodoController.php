@@ -64,7 +64,7 @@ class TodoController extends Controller
         //dd($input);
         $this->todo->fill($input)->save();
         //dd(redirect()->to('todo'));
-        return redirect()->to('todo');
+        return redirect()->to('todo.index');
         //一覧画面に遷移させてる。
     }
 
@@ -105,7 +105,7 @@ class TodoController extends Controller
         //dd($input,$id);
         $this->todo->find($id)->fill($input)->save();
         //dd(redirect()->to('todo'));
-        return redirect()->to('todo');//リソースを取得する場合はGETで送られる。
+        return redirect()->to('todo.index');//リソースを取得する場合はGETで送られる。
     }
 
     /**
@@ -118,6 +118,6 @@ class TodoController extends Controller
     {
         $this->todo->find($id)->delete();
         //dd(redirect()->to('todo'));
-        return redirect()->to('todo');
+        return redirect()->to('todo.index');
     }
 }
