@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
-    //
     protected $fillable = [
         'title',
-        'user_id'
+        'user_id',
     ];
 
     public function getByUserId($id)//ユーザーに紐づいたデータ取得

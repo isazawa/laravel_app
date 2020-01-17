@@ -30,10 +30,13 @@ class TodoController extends Controller
         //all()はeloquentの中のcollection.phpのcollectionクラスをインスタンスで$todosに格納している。
         //dd($todos,compact('todos'));
         $todos = $this->todo->getByUserId(Auth::id());
+        $users = Auth::user();
+        //dd($users);
         // Auth::id() = uesrsテーブルのログインしている自分のIDを取得
         // getByUserId() = todosテーブルのuesrs_idと同じレコード取得してviewに渡している。
         // dd($todos);
-        return view('todo.index',compact('todos'));//viewインスタンスで返してる
+       // dd(view('todo.index',compact('todos','users')));
+        return view('todo.index',compact('todos','users'));//viewインスタンスで返してる
         // ['todos' => $todos]
     }
 
